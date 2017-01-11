@@ -1,23 +1,33 @@
 from collections import defaultdict
 
-f = open("name.txt", "w")
-f.write("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
-f.close()
-'''f = open("name.txt", "r")
+#ok so this code it literally just
+#all its for is taking in a string in a file
+#and counting all the letters in it
+#it's meant for a dna string but i mean i guess it works for everything lol
 
-def counter(the_file):
+
+
+f = open("rosalind_dna.txt", "r")
+def counter(string):
 	d = defaultdict(int)
-	for i in list(the_file):
+	for i in list(string):
 		d[i] += 1
 	return d
 
+def file_handler(the_file):
+	for word in the_file:
+		return counter(word)
+
 def print_dict(dicts):
-	for key in dicts:
-		print str(key) + " " + str(dicts[key]) 
+	final = ""
+	a = sorted(dicts)
+	for key in a:
+		print dicts[key]
+		
 
-a = str(print_dict(counter(f)))
-
+b = file_handler(f)
+print print_dict(b)
 g = open("output2.txt", "w")
-g.write("a")
+g.write("potato")
 f.close()
-g.close()'''
+g.close()
